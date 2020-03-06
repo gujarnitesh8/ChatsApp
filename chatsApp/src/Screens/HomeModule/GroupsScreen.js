@@ -7,17 +7,14 @@ import Ripple from 'react-native-material-ripple';
 
 // =======>>>>>>>> ASSETS <<<<<<<<=======
 import homeStyle from './homeStyle';
-import { Colors, Scale, ImagesPath, LoadWheel, ShineLoader } from '../../CommonConfig';
+import { Colors, Scale, ImagesPath, LoadWheel, ShineLoader, ApplicationStyles } from '../../CommonConfig';
 import Card from './Components/Card';
 import { getAlbumListRequest } from '../../Redux/Actions'
-import { TextInput } from 'react-native-gesture-handler';
-import { ApplicationStyles } from '../../CommonConfig/ApplicationStyle';
-import { screenHeight } from '../../CommonConfig/HelperFunctions/functions';
 
 
 // =======>>>>>>>> CLASS DECLARATION <<<<<<<<=======
 
-export class HomeScreen extends React.Component {
+export class GroupScreen extends React.Component {
     // =======>>>>>>>> STATES DECLARATION <<<<<<<<=======
     state = {
         cardList: [],
@@ -34,7 +31,7 @@ export class HomeScreen extends React.Component {
             })
         }, 3000);
         this.setHeader()
-        this.callGetAlbum()
+        // this.callGetAlbum()
     }
     componentDidUpdate(prevProps) {
         if (this.state.isLoading_getAlbum && (this.props.Home.albumList != prevProps.Home.albumList)) {
@@ -101,4 +98,4 @@ const mapStateToProps = (res) => {
 }
 
 // =======>>>>>>>> REDUX CONNECTION <<<<<<<<=======
-export default connect(mapStateToProps, { getAlbumListRequest })(HomeScreen);
+export default connect(mapStateToProps, { getAlbumListRequest })(GroupScreen);

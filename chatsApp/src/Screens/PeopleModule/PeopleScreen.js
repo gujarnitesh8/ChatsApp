@@ -14,7 +14,7 @@ import { ApplicationStyles } from '../../CommonConfig/ApplicationStyle';
 
 // =======>>>>>>>> CLASS DECLARATION <<<<<<<<=======
 
-export class HomeScreen extends React.Component {
+export class PeopleScreen extends React.Component {
     // =======>>>>>>>> STATES DECLARATION <<<<<<<<=======
     state = {
         cardList: [],
@@ -61,4 +61,4 @@ const mapStateToProps = (res) => {
 }
 
 // =======>>>>>>>> REDUX CONNECTION <<<<<<<<=======
-export default connect(mapStateToProps, { getAlbumListRequest })(HomeScreen);
+export default connect(mapStateToProps, { getAlbumListRequest })(PeopleScreen);

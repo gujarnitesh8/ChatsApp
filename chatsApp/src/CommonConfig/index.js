@@ -1,5 +1,5 @@
 import ImagesPath from './ImagesPath';
-import ApplicationStyles from './ApplicationStyle';
+import { ApplicationStyles } from './ApplicationStyle';
 import Colors from './Colors';
 import Scale from './Matrics';
 import Fonts from './';

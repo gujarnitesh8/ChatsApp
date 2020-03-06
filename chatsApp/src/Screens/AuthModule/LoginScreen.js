@@ -3,6 +3,7 @@
 import React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, TextInput, StatusBar, } from 'react-native';
 import authStyle from './authStyle';
+import { Colors } from '../../CommonConfig';
 
 // =======>>>>>>>> ASSETS <<<<<<<<=======
 
@@ -37,7 +38,7 @@ export class LoginScreen extends React.Component {
     render() {
         return (
             <ScrollView contentContainerStyle={authStyle.scrollViewStyle}>
-                <StatusBar barStyle={'light-content'} backgroundColor={'red'} />
+                <StatusBar barStyle={'light-content'} backgroundColor={Colors.APPCOLOR} />
                 <View style={authStyle.loginScreeContainer}>
                     <View style={authStyle.loginHeaderTextContainer}>
                         <Text style={authStyle.loginBoxHeaderTextStyle}>Basic Folder Structure</Text>

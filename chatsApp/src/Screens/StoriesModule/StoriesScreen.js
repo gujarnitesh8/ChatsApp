@@ -14,7 +14,7 @@ import { ApplicationStyles } from '../../CommonConfig/ApplicationStyle';
 
 // =======>>>>>>>> CLASS DECLARATION <<<<<<<<=======
 
-export class HomeScreen extends React.Component {
+export class StoriesScreen extends React.Component {
     // =======>>>>>>>> STATES DECLARATION <<<<<<<<=======
     state = {
         cardList: [],
@@ -25,6 +25,8 @@ export class HomeScreen extends React.Component {
     componentDidMount() {
         console.disableYellowBox = true //warning disable line
         this.setHeader()
+        this.setState({ isLoading_getAlbum: true })
+        this.props.getAlbumListRequest()
     }
     componentDidUpdate(prevProps) {
         if (this.state.isLoading_getAlbum && (this.props.Home.albumList != prevProps.Home.albumList)) {
@@ -70,4 +72,4 @@ const mapStateToProps = (res) => {
 }
 
 // =======>>>>>>>> REDUX CONNECTION <<<<<<<<=======
-export default connect(mapStateToProps, { getAlbumListRequest })(HomeScreen);
+export default connect(mapStateToProps, { getAlbumListRequest })(StoriesScreen);

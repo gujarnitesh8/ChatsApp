@@ -9,13 +9,15 @@ export const ApplicationStyles = {
         opacity: 0.2,
         x: 0,
         y: 3,
-        style: { marginVertical: 5 }
+        style: { marginVertical: Scale(5) }
     },
     headerTitleStyle: {
         color: Colors.WHITE,
         fontSize: Scale(18)
     },
     headerStyle: {
-        backgroundColor: Colors.APPCOLOR
+        backgroundColor: Colors.APPCOLOR,
+        elevation: 0,
+        shadowOpacity: 0
     }
 }

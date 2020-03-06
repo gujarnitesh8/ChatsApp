@@ -1,8 +1,10 @@
 // =======>>>>>>>> LIBRARIES <<<<<<<<=======
 
 import React, { Fragment } from 'react';
+import Ripple from 'react-native-material-ripple';
 import { SafeAreaView, TouchableOpacity, Easing, Image, Button, Animated, StyleSheet, ScrollView, View, Text, StatusBar, } from 'react-native';
 import { ImagesPath, Colors, Scale } from './CommonConfig';
+
 global.springValue1 = new Animated.Value(0.9)
 global.springValue2 = new Animated.Value(0.8)
 global.springValue3 = new Animated.Value(0.8)

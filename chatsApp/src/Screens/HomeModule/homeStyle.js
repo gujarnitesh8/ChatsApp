@@ -4,7 +4,10 @@ import { Scale, Colors } from '../../CommonConfig';
 import { screenHeight } from '../../CommonConfig/HelperFunctions/functions';
 
 const homeStyle = StyleSheet.create({
-    homeScreeContainer: {
+    homeScreenViewContainer:{
+        flex: 1,
+    },
+    homeScreenContainer: {
         flex: 1,
         paddingVertical: Scale(10)
     },
