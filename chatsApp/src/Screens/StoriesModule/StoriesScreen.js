@@ -9,6 +9,7 @@ import storiesStyle from './storiesStyle';
 import { Colors, Scale, ImagesPath, LoadWheel, ShineLoader } from '../../CommonConfig';
 import Card from './Components/Card';
 import { getAlbumListRequest } from '../../Redux/Actions'
+import { ApplicationStyles } from '../../CommonConfig/ApplicationStyle';
 
 
 // =======>>>>>>>> CLASS DECLARATION <<<<<<<<=======
@@ -24,7 +25,6 @@ export class HomeScreen extends React.Component {
     componentDidMount() {
         console.disableYellowBox = true //warning disable line
         this.setHeader()
-        this.callGetAlbum()
     }
     componentDidUpdate(prevProps) {
         if (this.state.isLoading_getAlbum && (this.props.Home.albumList != prevProps.Home.albumList)) {
@@ -36,38 +36,15 @@ export class HomeScreen extends React.Component {
     // =======>>>>>>>> FUNCTIONS DECLARATION <<<<<<<<=======
     setHeader() {
         this.props.navigation.setOptions({
-            headerTitle: 'Home',
-            headerLeft: () => <TouchableOpacity><Image source={ImagesPath.MenuIcon} style={storiesStyle.menuIconStyle} /></TouchableOpacity>,
-            headerStyle: {
-                backgroundColor: Colors.ORANGE
-            },
-            headerTitleStyle: {
-                color: Colors.WHITE,
-                fontSize: Scale(18)
-            }
+            headerTitle: 'Stories',
+            headerStyle: ApplicationStyles.headerStyle,
+            headerTitleStyle: ApplicationStyles.headerTitleStyle
         })
     }
-    callGetAlbum() {
-        this.setState({ isLoading_getAlbum: true })
-        this.props.getAlbumListRequest()
-    }
+  
 
     // =======>>>>>>>> RENDER INITIALIZE <<<<<<<<=======
-    rendeItem({ item, index }) {
-        return (
-            <Card>
-                <View style={storiesStyle.cardInnerContainer}>
-                    <View style={storiesStyle.cardHeaderStyle}>
-                        <Text style={storiesStyle.cardHeaderTextStyle}>{item.title}</Text>
-                    </View>
-                    {/* <Image source={{ uri: item.url }} style={{ width: '100%', marginVertical: 15, height: 50 }} /> */}
-                    <Text style={storiesStyle.cardDescriptionTextStyle}>
-                        {`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`}
-                    </Text>
-                </View>
-            </Card>
-        )
-    }
+   
     render() {
         return (
             <ScrollView showsVerticalScrollIndicator={false} style={storiesStyle.homeScreeContainer}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native'
 import { Scale, Colors } from '../../CommonConfig';
+import { screenHeight } from '../../CommonConfig/HelperFunctions/functions';
 
 const homeStyle = StyleSheet.create({
     homeScreeContainer: {
@@ -16,7 +17,7 @@ const homeStyle = StyleSheet.create({
     cardContainer: {
         elevation: 3,
         width: '95%',
-        borderLeftColor: Colors.ORANGE,
+        borderLeftColor: Colors.APPCOLOR,
         borderLeftWidth: Scale(4),
         marginVertical: Scale(10),
         alignSelf: 'center',
@@ -43,6 +44,16 @@ const homeStyle = StyleSheet.create({
         fontSize: Scale(12),
         marginTop: Scale(5),
         color: Colors.GRAY
+    },
+    listEmptyTextStyle: {
+        color: Colors.GRAY
+    },
+    listEmptyContainer: {
+        width: '100%',
+        flex: 1,
+        height: screenHeight - Scale(200),
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })
 export default homeStyle;

@@ -15,6 +15,8 @@ const ImagesPath = {
     NotificationIcon: require('../Assets/Icons/notification.png'),
     LockIcon: require('../Assets/Icons/lock.png'),
     KeyIcon: require('../Assets/Icons/key.png'),
+
+    PlusIcon: require('../Assets/Icons/plus.png'),
 }
 
 export default ImagesPath

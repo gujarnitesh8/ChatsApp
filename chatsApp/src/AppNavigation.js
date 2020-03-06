@@ -28,6 +28,7 @@ export class App extends React.Component {
 
   componentDidMount() {
     console.disableYellowBox = true
+    StatusBar.setBarStyle('light-content')
   }
   componentWillUnmount() {
   }
@@ -36,12 +37,15 @@ export class App extends React.Component {
 
   // =======>>>>>>>> RENDER INITIALIZE <<<<<<<<=======
 
+  //--------->>>>> MAIN DRAWER NAVIGATOR <<<<<------------
   render() {
     return (
-      <NavigationContainer>
+      <NavigationContainer screenOptions={{ headerShown: false }}>
         <Drawer.Navigator
           hideStatusBar={false}
           statusBarAnimation={true}
+          screenOptions={{ headerShown: false }}
+          initialRouteName={'Login'}
           drawerPosition={'right'}
           drawerType={'slide'}
           overlayColor={1}
@@ -50,34 +54,62 @@ export class App extends React.Component {
             width: Scale(70)
           }}
           drawerContent={props => <SettingDrawer {...props} />}>
-          <Drawer.Screen name="root" component={rootStack} />
+          <Drawer.Screen name="root" component={TabNaviagator} />
           <Drawer.Screen name="Login" component={LoginScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
     );
   };
 }
-const TabNaviagator = () => {
+
+//--------->>>>> MAIN DRAWER NAVIGATOR <<<<<------------
+function TabNaviagator({ navigation, route }) {
   return (
     <Tab.Navigator
       initialRouteName="Home"
       backBehavior="initialRoute"
       tabBar={Tabbar}>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Stories" component={StoriesScreen} />
-      <Tab.Screen name="People" component={PeopleScreen} />
-      <Tab.Screen name="Settings" component={PeopleScreen} />
+      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="Stories" component={StoriesStack} />
+      <Tab.Screen name="Peoples" component={PeopleStack} />
+      <Tab.Screen name="Settings" component={SettingStack} />
     </Tab.Navigator >
   )
 }
-const rootStack = () => {
+
+//--------->>>>> HOME TAB STACK <<<<<------------
+function HomeStack() {
   return (
-    <Stack.Navigator initialRouteName={'Login'}>
-      <Stack.Screen name="Login" options={{ headerShown: false }} initialParams={{ username: 'test', password: '1256' }} component={LoginScreen} />
+    <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Tab" options={{ headerShown: false }} component={TabNaviagator} />
-      <Stack.Screen name="Drawer" component={PeopleScreen} />
     </Stack.Navigator>
-  )
+  );
+}
+
+//--------->>>>> STORIES TAB STACK <<<<<------------
+function StoriesStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Stories" component={StoriesScreen} />
+    </Stack.Navigator>
+  );
+}
+
+//--------->>>>> PEOPLES TAB STACK <<<<<------------
+function PeopleStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="People" component={PeopleScreen} />
+    </Stack.Navigator>
+  );
+}
+
+//--------->>>>> SETTINGS TAB STACK <<<<<------------
+function SettingStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Settings" component={SettingDrawer} />
+    </Stack.Navigator>
+  );
 }
 export default App;

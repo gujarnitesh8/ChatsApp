@@ -20,27 +20,27 @@ export function SettingDrawer({ progress, ...rest }) {
 
     return (
         <DrawerContentScrollView {...rest}>
-            <Animated.View style={{ transform: [{ translateX }], height: screenHeight - Scale(100), alignItems: 'center' }}>
+            <Animated.View style={{ transform: [{ translateX }], height: screenHeight - Scale(80), alignItems: 'center' }}>
                 {/* <DrawerItemList {...rest} /> */}
                 {/* <DrawerItem label="Help" onPress={() => alert('Link to help')} /> */}
-                <TouchableOpacity style={{ width: Scale(50), backgroundColor: Colors.TEAL, marginVertical: Scale(15), height: Scale(50), justifyContent: 'center', alignItems: 'center' }}>
-                    <Image source={ImagesPath.PeopleActiveIcon} style={{ height: Scale(35), tintColor: Colors.WHITE, width: Scale(35) }} />
+                <TouchableOpacity onPress={() => rest.navigation.navigate('Home')} style={{ width: Scale(45), backgroundColor: Colors.TEAL, marginVertical: Scale(15), height: Scale(45), justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={ImagesPath.PeopleActiveIcon} style={{ height: Scale(25), tintColor: Colors.WHITE, width: Scale(25) }} />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{ width: Scale(50), backgroundColor: Colors.OLIVE, marginVertical: Scale(15), height: Scale(50), justifyContent: 'center', alignItems: 'center' }}>
-                    <Image source={ImagesPath.KeyIcon} style={{ height: Scale(35), tintColor: Colors.WHITE, width: Scale(35) }} />
+                <TouchableOpacity style={{ width: Scale(45), backgroundColor: Colors.OLIVE, marginVertical: Scale(15), height: Scale(45), justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={ImagesPath.KeyIcon} style={{ height: Scale(25), tintColor: Colors.WHITE, width: Scale(25) }} />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{ width: Scale(50), backgroundColor: Colors.MAROON, marginVertical: Scale(15), height: Scale(50), justifyContent: 'center', alignItems: 'center' }}>
-                    <Image source={ImagesPath.LockIcon} style={{ height: Scale(35), tintColor: Colors.WHITE, width: Scale(35) }} />
+                <TouchableOpacity style={{ width: Scale(45), backgroundColor: Colors.MAROON, marginVertical: Scale(15), height: Scale(45), justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={ImagesPath.LockIcon} style={{ height: Scale(25), tintColor: Colors.WHITE, width: Scale(25) }} />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{ width: Scale(50), backgroundColor: Colors.NAVY, marginVertical: Scale(15), height: Scale(50), justifyContent: 'center', alignItems: 'center' }}>
-                    <Image source={ImagesPath.NotificationIcon} style={{ height: Scale(35), tintColor: Colors.WHITE, width: Scale(35) }} />
+                <TouchableOpacity style={{ width: Scale(45), backgroundColor: Colors.NAVY, marginVertical: Scale(15), height: Scale(45), justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={ImagesPath.NotificationIcon} style={{ height: Scale(25), tintColor: Colors.WHITE, width: Scale(25) }} />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{ width: Scale(50), backgroundColor: Colors.PURPLE, marginVertical: Scale(15), height: Scale(50), justifyContent: 'center', alignItems: 'center' }}>
-                    <Image source={ImagesPath.SettingsActiveIcon} style={{ height: Scale(35), tintColor: Colors.WHITE, width: Scale(35) }} />
+                <TouchableOpacity style={{ width: Scale(45), backgroundColor: Colors.PURPLE, marginVertical: Scale(15), height: Scale(45), justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={ImagesPath.SettingsActiveIcon} style={{ height: Scale(25), tintColor: Colors.WHITE, width: Scale(25) }} />
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => {
@@ -53,8 +53,8 @@ export function SettingDrawer({ progress, ...rest }) {
                             ],
                         })
                     );
-                }} style={{ width: Scale(50), position: 'absolute', bottom: Scale(5), backgroundColor: Colors.MATEBLACK, marginVertical: Scale(15), height: Scale(50), justifyContent: 'center', alignItems: 'center' }}>
-                    <Image source={ImagesPath.LogOutIcon} style={{ height: Scale(35), tintColor: Colors.WHITE, width: Scale(35) }} />
+                }} style={{ width: Scale(45), position: 'absolute', bottom: Scale(5), backgroundColor: Colors.MATEBLACK, marginVertical: Scale(15), height: Scale(45), justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={ImagesPath.LogOutIcon} style={{ height: Scale(25), tintColor: Colors.WHITE, width: Scale(25) }} />
                 </TouchableOpacity>
 
             </Animated.View>

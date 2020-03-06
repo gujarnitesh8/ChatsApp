@@ -1,7 +1,8 @@
 
 
 const Colors = {
-    APPCOLOR: global.theme == 'dark' ? "black" : "rgb(0,179,76)",
+    APPCOLOR: "rgb(0,179,76)",
+    LIGHT_APPCOLOR: "#dff5e2",
     MATEBLACK: '#343434',
     WHITE: '#FFFFFF',
     LIGHT_GRAY: '#C0C0C0',

@@ -10,6 +10,8 @@ import { Colors, Scale, ImagesPath, LoadWheel, ShineLoader } from '../../CommonC
 import Card from './Components/Card';
 import { getAlbumListRequest } from '../../Redux/Actions'
 import { TextInput } from 'react-native-gesture-handler';
+import { ApplicationStyles } from '../../CommonConfig/ApplicationStyle';
+import { screenHeight } from '../../CommonConfig/HelperFunctions/functions';
 
 
 // =======>>>>>>>> CLASS DECLARATION <<<<<<<<=======
@@ -18,13 +20,18 @@ export class HomeScreen extends React.Component {
     // =======>>>>>>>> STATES DECLARATION <<<<<<<<=======
     state = {
         cardList: [],
-        isLoading_getAlbum: false
+        isLoading_getAlbum: true
     }
     // =======>>>>>>>> LIFE CYCLE METHODS <<<<<<<<=======
 
     componentDidMount() {
         console.disableYellowBox = true //warning disable line
-        console.log("header props", this.props)
+        setTimeout(() => {
+            this.setState({
+                isLoading_getAlbum: false,
+                cardList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+            })
+        }, 3000);
         this.setHeader()
         this.callGetAlbum()
     }
@@ -37,17 +44,12 @@ export class HomeScreen extends React.Component {
 
     // =======>>>>>>>> FUNCTIONS DECLARATION <<<<<<<<=======
     setHeader() {
-        // this.props.navigation.setOptions({
-        //     headerTitle: 'Home',
-        //     headerLeft: () => <TouchableOpacity><Image source={ImagesPath.MenuIcon} style={homeStyle.menuIconStyle} /></TouchableOpacity>,
-        //     headerStyle: {
-        //         backgroundColor: Colors.ORANGE
-        //     },
-        //     headerTitleStyle: {
-        //         color: Colors.WHITE,
-        //         fontSize: Scale(18)
-        //     }
-        // })
+        this.props.navigation.setOptions({
+            headerTitle: 'Home',
+            headerLeft: () => <TouchableOpacity><Image source={ImagesPath.PlusIcon} style={homeStyle.menuIconStyle} /></TouchableOpacity>,
+            headerStyle: ApplicationStyles.headerStyle,
+            headerTitleStyle: ApplicationStyles.headerTitleStyle
+        })
     }
     callGetAlbum() {
         this.setState({ isLoading_getAlbum: true })
@@ -55,14 +57,10 @@ export class HomeScreen extends React.Component {
     }
 
     // =======>>>>>>>> RENDER INITIALIZE <<<<<<<<=======
-    rendeItem({ item, index }) {
+    renderItem = () => {
         return (
             <Card>
                 <View style={homeStyle.cardInnerContainer}>
-                    <View style={homeStyle.cardHeaderStyle}>
-                        <Text style={homeStyle.cardHeaderTextStyle}>{item.title}</Text>
-                    </View>
-                    {/* <Image source={{ uri: item.url }} style={{ width: '100%', marginVertical: 15, height: 50 }} /> */}
                     <Text style={homeStyle.cardDescriptionTextStyle}>
                         {`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`}
                     </Text>
@@ -70,18 +68,19 @@ export class HomeScreen extends React.Component {
             </Card>
         )
     }
+
     render() {
         return (
             <ScrollView showsVerticalScrollIndicator={false} style={homeStyle.homeScreeContainer}>
-                <StatusBar barStyle="dark-content" backgroundColor="transparent" />
-                {/* <FlatList
+                <FlatList
                     data={this.state.cardList}
                     extraData={this.state}
-                    scrollEnabled={false}
-                    renderItem={this.rendeItem.bind(this)}
-                /> */}
-                {/* <TextInput placeholder={"Enter text here"} /> */}
-                <ShineLoader visible={this.state.isLoading_getAlbum} />
+                    style={{ flex: 1 }}
+                    renderItem={this.renderItem.bind(this)}
+                    ListEmptyComponent={() => {
+                        return this.state.isLoading_getAlbum ? <ShineLoader visible={this.state.isLoading_getAlbum} /> : <View style={homeStyle.listEmptyContainer}><Text style={homeStyle.listEmptyTextStyle}>opps, No records found</Text></View>
+                    }}
+                />
             </ScrollView>
         );
     };

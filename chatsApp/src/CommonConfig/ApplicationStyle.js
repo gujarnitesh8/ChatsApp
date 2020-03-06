@@ -1,3 +1,6 @@
+import Colors from "./Colors";
+import Scale from "./Matrics";
+
 export const ApplicationStyles = {
     shadowOpt: {
         color: "#000",
@@ -7,5 +10,12 @@ export const ApplicationStyles = {
         x: 0,
         y: 3,
         style: { marginVertical: 5 }
+    },
+    headerTitleStyle: {
+        color: Colors.WHITE,
+        fontSize: Scale(18)
+    },
+    headerStyle: {
+        backgroundColor: Colors.APPCOLOR
     }
 }
