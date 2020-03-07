@@ -4,7 +4,7 @@ import { Scale, Colors } from '../../CommonConfig';
 import { screenHeight } from '../../CommonConfig/HelperFunctions/functions';
 
 const homeStyle = StyleSheet.create({
-    homeScreenViewContainer:{
+    homeScreenViewContainer: {
         flex: 1,
     },
     homeScreenContainer: {
@@ -20,9 +20,9 @@ const homeStyle = StyleSheet.create({
     cardContainer: {
         elevation: 3,
         width: '95%',
-        borderLeftColor: Colors.APPCOLOR,
-        borderLeftWidth: Scale(4),
-        marginVertical: Scale(10),
+        // borderLeftColor: Colors.APPCOLOR,
+        // borderLeftWidth: Scale(4),
+        marginVertical: Scale(5),
         alignSelf: 'center',
         borderRadius: Scale(5),
         shadowOffset: { height: Scale(5), width: Scale(0) },
@@ -31,7 +31,8 @@ const homeStyle = StyleSheet.create({
         backgroundColor: Colors.WHITE
     },
     cardInnerContainer: {
-        padding: Scale(15),
+        padding: Scale(10),
+        flexDirection: 'row',
         flex: 1
     },
     cardHeaderStyle: {
@@ -43,9 +44,13 @@ const homeStyle = StyleSheet.create({
         fontSize: Scale(17),
         fontWeight: '600'
     },
-    cardDescriptionTextStyle: {
+    cardTimeTextStyle: {
         fontSize: Scale(12),
-        marginTop: Scale(5),
+        color: Colors.GRAY
+    },
+    cardDescriptionTextStyle: {
+        fontSize: Scale(14),
+        flex: 0.95,
         color: Colors.GRAY
     },
     listEmptyTextStyle: {

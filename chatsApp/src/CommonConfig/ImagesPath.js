@@ -17,6 +17,8 @@ const ImagesPath = {
     KeyIcon: require('../Assets/Icons/key.png'),
 
     PlusIcon: require('../Assets/Icons/plus.png'),
+    DoubleRightCheckIcon: require('../Assets/Icons/check.png'),
+    RightCheckIcon: require('../Assets/Icons/checked.png'),
 }
 
 export default ImagesPath
