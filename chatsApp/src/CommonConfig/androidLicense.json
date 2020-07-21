@@ -1,0 +1,38 @@
+{
+    "api_token": "MiQqEWZMr8OeM9FYcwaxpQ",
+    "app_identifiers": [
+        "com.photoeditor"
+    ],
+    "available_actions": [],
+    "domains": [
+        "https://api.photoeditorsdk.com"
+    ],
+    "enterprise_license": false,
+    "expires_at": 1597881600,
+    "features": [
+        "camera",
+        "library",
+        "export",
+        "customassets",
+        "whitelabel",
+        "focus",
+        "textdesign",
+        "transform",
+        "brush",
+        "text",
+        "frame",
+        "overlay",
+        "sticker",
+        "adjustment",
+        "filter"
+    ],
+    "issued_at": 1595333591,
+    "minimum_sdk_version": "1.0",
+    "owner": "Gujar Nitesh",
+    "platform": "Android",
+    "products": [
+        "pesdk"
+    ],
+    "version": "2.4",
+    "signature": "GRF8k9ZonxLu+yF8C1sGZpLyyZSKWg9XkBtHLBCMtuJLP1XRbZ8miTSqVR2LoxmD13Cn5+BaU+UROTtHh3psPt7EQdqNCe5k//zuq2e7fxamcWVzg1x2lJTddcybQdrSb1uW7IG8AtFBWtPDLnVMHOAXBTbYutOskKUMiCv/UBkFAEvbeVX/HbY5I6a9D1ODHqg3UrX13k8Yiy9du5WVMD3fcPxUzpOwNtznDJH7YjicrSLjSXXsjlfSGw04W9K3rOk3wN3gkav1C/TyUL/6sHj7LiG8Il8FruIb1AT9XziYbC8gds8s2lHMqjrbJc9kDrLJ/JJwuKIvpLH5vIRPPB5KXJKfnRCStuupZKk7EeJpTKvDE3Y/i/OhIBa8c47K32axsDIUuXWIuzke2ZfVBEKfkYMOJUZF0JSUPBQKPD7WaF/3DqclmXTc0EM/EpHMbZjjss8/Ny6CO8CoZ6tSxUKE6EZ7CO7dLEIsh4xypNHrHMxFtljrdaBr2l4zTNUvcLtHFuuQP/8dCJ/cdgFGZSeSPs0Y/yzmoBxLM5U4R8yLXbujrt1p4KCRXyTOjt7ztbo3vZf6WBotcPB4JxKPJcqVZYKPq4VBTWIetgHG8zThvrpOhUpgLHOROQe4FsPA32Pc3dK/7Z82GbPNHVzPmbSUrkx/RW9+bCwbRlbb+d8="
+}
